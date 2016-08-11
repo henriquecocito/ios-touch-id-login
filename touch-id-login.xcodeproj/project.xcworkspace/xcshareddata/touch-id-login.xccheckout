@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D26F1A4F-6533-410B-B23F-8B3CE24B700E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>touch-id-login</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CE6078A2F18DFDD69BC04860C5DC6F46D7D91FAB</key>
+		<string>https://github.com/henriquecocito/ios-touch-id-login.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>touch-id-login.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CE6078A2F18DFDD69BC04860C5DC6F46D7D91FAB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/henriquecocito/ios-touch-id-login.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CE6078A2F18DFDD69BC04860C5DC6F46D7D91FAB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CE6078A2F18DFDD69BC04860C5DC6F46D7D91FAB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>touch-id-login</string>
+		</dict>
+	</array>
+</dict>
+</plist>
