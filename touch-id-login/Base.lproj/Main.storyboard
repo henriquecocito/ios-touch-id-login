@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -23,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="26"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-Cg-BdK">
@@ -79,10 +80,74 @@
                     <connections>
                         <outlet property="password" destination="wLK-px-v9R" id="p4L-I4-hfB"/>
                         <outlet property="username" destination="yfm-Cg-BdK" id="Tjz-iD-PmO"/>
+                        <segue destination="Keh-Ks-tEa" kind="show" identifier="showFeed" id="yJA-lE-3Fe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Feed Table View Controller-->
+        <scene sceneID="9No-w8-gzf">
+            <objects>
+                <tableViewController id="Keh-Ks-tEa" customClass="FeedTableViewController" customModule="touch_id_login" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ijc-M2-0TM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedHeaderTableViewCell" rowHeight="94" id="WuC-3x-QgV" customClass="FeedHeaderTableViewCell" customModule="touch_id_login" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WuC-3x-QgV" id="RSq-74-E4r">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Developer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34i-vs-ExX">
+                                            <rect key="frame" x="8" y="8" width="584" height="43"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="developer bio" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wj-T5-MiX">
+                                            <rect key="frame" x="8" y="59" width="584" height="18"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="5wj-T5-MiX" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="03J-i2-eTS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="34i-vs-ExX" secondAttribute="trailing" id="80d-HV-bHN"/>
+                                        <constraint firstItem="34i-vs-ExX" firstAttribute="top" secondItem="RSq-74-E4r" secondAttribute="topMargin" id="PUH-MC-6uZ"/>
+                                        <constraint firstItem="34i-vs-ExX" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="eNF-gh-eFh"/>
+                                        <constraint firstItem="5wj-T5-MiX" firstAttribute="top" secondItem="34i-vs-ExX" secondAttribute="bottom" constant="8" id="fGZ-BT-VT0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5wj-T5-MiX" secondAttribute="trailing" id="h0l-1q-twe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="5wj-T5-MiX" secondAttribute="bottom" constant="8" id="he0-DT-Cvf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WGn-9A-fui">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WGn-9A-fui" id="J91-Bf-i3a">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Keh-Ks-tEa" id="yZE-lS-vTN"/>
+                            <outlet property="delegate" destination="Keh-Ks-tEa" id="CXt-3p-U6a"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6n-yp-Efb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="266"/>
         </scene>
     </scenes>
 </document>

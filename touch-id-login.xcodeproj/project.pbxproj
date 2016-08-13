@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C19FC001D5FC3CF000357CD /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C19FBFF1D5FC3CF000357CD /* FeedTableViewController.swift */; };
+		5C19FC021D5FC4CF000357CD /* FeedHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C19FC011D5FC4CF000357CD /* FeedHeaderTableViewCell.swift */; };
 		5CAA80121D59702900A64DED /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA80111D59702900A64DED /* Configurations.swift */; };
 		5CAD5C991D5036CC00178D9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD5C981D5036CC00178D9F /* AppDelegate.swift */; };
 		5CAD5C9B1D5036CC00178D9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD5C9A1D5036CC00178D9F /* LoginViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C19FBFF1D5FC3CF000357CD /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		5C19FC011D5FC4CF000357CD /* FeedHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedHeaderTableViewCell.swift; path = cells/FeedHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		5CAA80111D59702900A64DED /* Configurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		5CAD5C931D5036CC00178D9F /* touch-id-login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "touch-id-login.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CAD5C971D5036CC00178D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,9 +83,11 @@
 		5CAD5C951D5036CC00178D9F /* touch-id-login */ = {
 			isa = PBXGroup;
 			children = (
+				5C19FC011D5FC4CF000357CD /* FeedHeaderTableViewCell.swift */,
 				5CAD5C981D5036CC00178D9F /* AppDelegate.swift */,
 				5CAA80111D59702900A64DED /* Configurations.swift */,
 				5CAD5C9A1D5036CC00178D9F /* LoginViewController.swift */,
+				5C19FBFF1D5FC3CF000357CD /* FeedTableViewController.swift */,
 				5CAD5C9C1D5036CC00178D9F /* Main.storyboard */,
 				5CAD5C9F1D5036CC00178D9F /* Images.xcassets */,
 				5CAD5CA11D5036CC00178D9F /* LaunchScreen.xib */,
@@ -218,6 +224,8 @@
 				5CAD5C9B1D5036CC00178D9F /* LoginViewController.swift in Sources */,
 				5CAD5C991D5036CC00178D9F /* AppDelegate.swift in Sources */,
 				5CAA80121D59702900A64DED /* Configurations.swift in Sources */,
+				5C19FC021D5FC4CF000357CD /* FeedHeaderTableViewCell.swift in Sources */,
+				5C19FC001D5FC3CF000357CD /* FeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

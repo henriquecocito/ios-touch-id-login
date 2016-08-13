@@ -13,6 +13,8 @@ class LoginViewController: UIViewController, NSURLConnectionDataDelegate, NSURLC
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    var error : NSError?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,6 +26,9 @@ class LoginViewController: UIViewController, NSURLConnectionDataDelegate, NSURLC
     }
 
     @IBAction func loginAction(sender: UIButton) {
+
+        // Clear previous errors
+        self.error = nil
         
         // Create NSURL Object
         let apiUrl = NSURL(string: NSString(format: "%@/%@/%@", Configurations.apiHost, "users", "henriquecocito") as String)
@@ -35,7 +40,7 @@ class LoginViewController: UIViewController, NSURLConnectionDataDelegate, NSURLC
         request.HTTPMethod = "GET"
         
         // Get credentials
-        let loginString = NSString(format: "%@:%@", "username", "password")
+        let loginString = NSString(format: "%@:%@", username.text, password.text)
         let loginData: NSData = loginString.dataUsingEncoding(NSUTF8StringEncoding)!
         let base64LoginString = loginData.base64EncodedStringWithOptions(nil)
         
@@ -53,6 +58,9 @@ class LoginViewController: UIViewController, NSURLConnectionDataDelegate, NSURLC
             
             // Check response status code
             if httpResponse.statusCode != 200 {
+
+                // Set error
+                self.error = NSError(domain: httpResponse.allHeaderFields["Server"] as! String, code: httpResponse.statusCode, userInfo: nil)
                 
                 // Get HTTP status
                 if let status = httpResponse.allHeaderFields["Status"] as? String {
@@ -70,8 +78,11 @@ class LoginViewController: UIViewController, NSURLConnectionDataDelegate, NSURLC
         
         if let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
 
-            let name = jsonResult["name"] as? NSString
-            let bio = jsonResult["bio"] as? NSString
+            if(self.error == nil) {
+                performSegueWithIdentifier("showFeed", sender: nil)
+//                let name = jsonResult["name"] as? NSString
+//                let bio = jsonResult["bio"] as? NSString
+            }
         }
     }
 }
