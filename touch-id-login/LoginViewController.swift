@@ -79,10 +79,15 @@ class LoginViewController: UIViewController, NSURLConnectionDataDelegate, NSURLC
         if let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
 
             if(self.error == nil) {
-                performSegueWithIdentifier("showFeed", sender: nil)
-//                let name = jsonResult["name"] as? NSString
-//                let bio = jsonResult["bio"] as? NSString
+                performSegueWithIdentifier("showFeed", sender: jsonResult)
             }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showFeed") {
+            var destinationController = segue.destinationViewController as! FeedTableViewController
+            destinationController.data = sender as! NSDictionary
         }
     }
 }

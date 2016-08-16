@@ -8,6 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="touch_id_login" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -83,13 +84,12 @@
                         <segue destination="Keh-Ks-tEa" kind="show" identifier="showFeed" id="yJA-lE-3Fe"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
         <!--Feed Table View Controller-->
         <scene sceneID="9No-w8-gzf">
             <objects>
-                <tableViewController id="Keh-Ks-tEa" customClass="FeedTableViewController" customModule="touch_id_login" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Keh-Ks-tEa" customClass="FeedTableViewController" customModule="touch_id_login" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ijc-M2-0TM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,14 +101,14 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WuC-3x-QgV" id="RSq-74-E4r">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Developer Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34i-vs-ExX">
-                                            <rect key="frame" x="8" y="8" width="584" height="43"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34i-vs-ExX">
+                                            <rect key="frame" x="8" y="24" width="584" height="27"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="developer bio" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wj-T5-MiX">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="--" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wj-T5-MiX">
                                             <rect key="frame" x="8" y="59" width="584" height="18"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
@@ -120,7 +120,7 @@
                                     <constraints>
                                         <constraint firstItem="5wj-T5-MiX" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="03J-i2-eTS"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="34i-vs-ExX" secondAttribute="trailing" id="80d-HV-bHN"/>
-                                        <constraint firstItem="34i-vs-ExX" firstAttribute="top" secondItem="RSq-74-E4r" secondAttribute="topMargin" id="PUH-MC-6uZ"/>
+                                        <constraint firstItem="34i-vs-ExX" firstAttribute="top" secondItem="RSq-74-E4r" secondAttribute="topMargin" constant="16" id="PUH-MC-6uZ"/>
                                         <constraint firstItem="34i-vs-ExX" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="eNF-gh-eFh"/>
                                         <constraint firstItem="5wj-T5-MiX" firstAttribute="top" secondItem="34i-vs-ExX" secondAttribute="bottom" constant="8" id="fGZ-BT-VT0"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="5wj-T5-MiX" secondAttribute="trailing" id="h0l-1q-twe"/>
@@ -128,6 +128,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="bio" destination="5wj-T5-MiX" id="RYI-cN-8mQ"/>
+                                    <outlet property="name" destination="34i-vs-ExX" id="sSa-fd-fYH"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WGn-9A-fui">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -144,10 +148,11 @@
                             <outlet property="delegate" destination="Keh-Ks-tEa" id="CXt-3p-U6a"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6n-yp-Efb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="266"/>
+            <point key="canvasLocation" x="1065" y="249"/>
         </scene>
     </scenes>
 </document>
