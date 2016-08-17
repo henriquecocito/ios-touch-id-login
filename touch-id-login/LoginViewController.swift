@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, NSURLConnectionDataDelegate, NSURLConnectionDelegate {
+class LoginViewController: UIViewController, NSURLConnectionDataDelegate {
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -31,7 +31,7 @@ class LoginViewController: UIViewController, NSURLConnectionDataDelegate, NSURLC
         self.error = nil
         
         // Create NSURL Object
-        let apiUrl = NSURL(string: NSString(format: "%@/%@/%@", Configurations.apiHost, "users", "henriquecocito") as String)
+        let apiUrl = NSURL(string: NSString(format: "%@/users/%@", Configurations.apiHost, "henriquecocito") as String)
         
         // Create URL Request
         let request = NSMutableURLRequest(URL: apiUrl!)

@@ -96,22 +96,29 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedHeaderTableViewCell" rowHeight="94" id="WuC-3x-QgV" customClass="FeedHeaderTableViewCell" customModule="touch_id_login" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedHeaderTableViewCell" rowHeight="224" id="WuC-3x-QgV" customClass="FeedHeaderTableViewCell" customModule="touch_id_login" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WuC-3x-QgV" id="RSq-74-E4r">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34i-vs-ExX">
-                                            <rect key="frame" x="8" y="24" width="584" height="27"/>
+                                            <rect key="frame" x="8" y="24" width="584" height="104"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="--" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wj-T5-MiX">
-                                            <rect key="frame" x="8" y="59" width="584" height="18"/>
+                                            <rect key="frame" x="8" y="136" width="584" height="18"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repositories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9u-Ku-gvF">
+                                            <rect key="frame" x="8" y="186" width="584" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -120,12 +127,21 @@
                                     <constraints>
                                         <constraint firstItem="5wj-T5-MiX" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="03J-i2-eTS"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="34i-vs-ExX" secondAttribute="trailing" id="80d-HV-bHN"/>
+                                        <constraint firstItem="A9u-Ku-gvF" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="8C2-da-u9J"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="A9u-Ku-gvF" secondAttribute="bottom" constant="8" id="EiI-N1-0xc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="A9u-Ku-gvF" secondAttribute="trailing" id="N97-iz-Tkd"/>
                                         <constraint firstItem="34i-vs-ExX" firstAttribute="top" secondItem="RSq-74-E4r" secondAttribute="topMargin" constant="16" id="PUH-MC-6uZ"/>
                                         <constraint firstItem="34i-vs-ExX" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="eNF-gh-eFh"/>
                                         <constraint firstItem="5wj-T5-MiX" firstAttribute="top" secondItem="34i-vs-ExX" secondAttribute="bottom" constant="8" id="fGZ-BT-VT0"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="5wj-T5-MiX" secondAttribute="trailing" id="h0l-1q-twe"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="5wj-T5-MiX" secondAttribute="bottom" constant="8" id="he0-DT-Cvf"/>
+                                        <constraint firstItem="A9u-Ku-gvF" firstAttribute="top" secondItem="5wj-T5-MiX" secondAttribute="bottom" constant="32" id="lW8-t8-oSn"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="he0-DT-Cvf"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>

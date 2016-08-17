@@ -62,6 +62,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C19FC031D63E1E5000357CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5C19FC011D5FC4CF000357CD /* FeedHeaderTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5C19FC041D63E1F8000357CD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5C19FBFF1D5FC3CF000357CD /* FeedTableViewController.swift */,
+				5CAD5C9A1D5036CC00178D9F /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		5CAD5C8A1D5036CC00178D9F = {
 			isa = PBXGroup;
 			children = (
@@ -83,11 +100,10 @@
 		5CAD5C951D5036CC00178D9F /* touch-id-login */ = {
 			isa = PBXGroup;
 			children = (
-				5C19FC011D5FC4CF000357CD /* FeedHeaderTableViewCell.swift */,
+				5C19FC041D63E1F8000357CD /* Controller */,
+				5C19FC031D63E1E5000357CD /* View */,
 				5CAD5C981D5036CC00178D9F /* AppDelegate.swift */,
 				5CAA80111D59702900A64DED /* Configurations.swift */,
-				5CAD5C9A1D5036CC00178D9F /* LoginViewController.swift */,
-				5C19FBFF1D5FC3CF000357CD /* FeedTableViewController.swift */,
 				5CAD5C9C1D5036CC00178D9F /* Main.storyboard */,
 				5CAD5C9F1D5036CC00178D9F /* Images.xcassets */,
 				5CAD5CA11D5036CC00178D9F /* LaunchScreen.xib */,
