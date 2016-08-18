@@ -11,6 +11,7 @@ import UIKit
 class FeedTableViewController: UITableViewController, NSURLConnectionDataDelegate {
 
     var data : NSDictionary!
+    var repositoryData : NSArray = NSArray()
     var error : NSError?
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class FeedTableViewController: UITableViewController, NSURLConnectionDataDelegat
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.repositoryData.count
     }
 
     override func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
@@ -44,8 +45,10 @@ class FeedTableViewController: UITableViewController, NSURLConnectionDataDelegat
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier("feedTableViewCell") as! FeedTableViewCell
+        cell.name.text = self.repositoryData[indexPath.row]["name"] as? String
+        
+        return cell
     }
     
     
@@ -67,7 +70,36 @@ class FeedTableViewController: UITableViewController, NSURLConnectionDataDelegat
         let urlConnection = NSURLConnection(request: request, delegate: self)
 
     }
+    
+    func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
+        
+        // Get http response
+        if let httpResponse = response as? NSHTTPURLResponse {
+            
+            // Check response status code
+            if httpResponse.statusCode != 200 {
+                
+                // Set error
+                self.error = NSError(domain: httpResponse.allHeaderFields["Server"] as! String, code: httpResponse.statusCode, userInfo: nil)
+                
+                // Get HTTP status
+                if let status = httpResponse.allHeaderFields["Status"] as? String {
+                    
+                    // Show error alert
+                    let alert = UIAlertController(title: status, message: "An error occurred trying to access github.com\n\nTry again later.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
 
     func connection(connection: NSURLConnection, didReceiveData data: NSData) {
-
+        if let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &self.error) as? NSArray {
+            
+            if(self.error == nil) {
+                self.repositoryData = jsonResult
+                self.tableView.reloadData()
+            }
+        }
     }}

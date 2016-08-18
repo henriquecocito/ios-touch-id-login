@@ -96,27 +96,27 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedHeaderTableViewCell" rowHeight="224" id="WuC-3x-QgV" customClass="FeedHeaderTableViewCell" customModule="touch_id_login" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedHeaderTableViewCell" rowHeight="244" id="WuC-3x-QgV" customClass="FeedHeaderTableViewCell" customModule="touch_id_login" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WuC-3x-QgV" id="RSq-74-E4r">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34i-vs-ExX">
-                                            <rect key="frame" x="8" y="24" width="584" height="104"/>
+                                            <rect key="frame" x="8" y="24" width="584" height="100"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="--" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wj-T5-MiX">
-                                            <rect key="frame" x="8" y="136" width="584" height="18"/>
+                                            <rect key="frame" x="8" y="132" width="584" height="18"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repositories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9u-Ku-gvF">
-                                            <rect key="frame" x="8" y="186" width="584" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Repositories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9u-Ku-gvF">
+                                            <rect key="frame" x="8" y="182" width="584" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,7 +128,7 @@
                                         <constraint firstItem="5wj-T5-MiX" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="03J-i2-eTS"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="34i-vs-ExX" secondAttribute="trailing" id="80d-HV-bHN"/>
                                         <constraint firstItem="A9u-Ku-gvF" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="8C2-da-u9J"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="A9u-Ku-gvF" secondAttribute="bottom" constant="8" id="EiI-N1-0xc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="A9u-Ku-gvF" secondAttribute="bottom" constant="32" id="EiI-N1-0xc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="A9u-Ku-gvF" secondAttribute="trailing" id="N97-iz-Tkd"/>
                                         <constraint firstItem="34i-vs-ExX" firstAttribute="top" secondItem="RSq-74-E4r" secondAttribute="topMargin" constant="16" id="PUH-MC-6uZ"/>
                                         <constraint firstItem="34i-vs-ExX" firstAttribute="leading" secondItem="RSq-74-E4r" secondAttribute="leadingMargin" id="eNF-gh-eFh"/>
@@ -149,14 +149,31 @@
                                     <outlet property="name" destination="34i-vs-ExX" id="sSa-fd-fYH"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WGn-9A-fui">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedTableViewCell" id="WGn-9A-fui" customClass="FeedTableViewCell" customModule="touch_id_login" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WGn-9A-fui" id="J91-Bf-i3a">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnW-gA-Zmv">
+                                            <rect key="frame" x="16" y="16" width="568" height="24"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="wnW-gA-Zmv" firstAttribute="top" secondItem="J91-Bf-i3a" secondAttribute="topMargin" constant="8" id="1Wm-Ie-AkR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wnW-gA-Zmv" secondAttribute="trailing" constant="8" id="D9Z-C0-xCa"/>
+                                        <constraint firstItem="wnW-gA-Zmv" firstAttribute="leading" secondItem="J91-Bf-i3a" secondAttribute="leadingMargin" constant="8" id="KFP-na-HOK"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="name" destination="wnW-gA-Zmv" id="ZuV-8b-TxH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
